@@ -1,0 +1,29 @@
+header, footer {
+    background-color: #25b9d7;
+    color: white;
+    padding: 30px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+
+.section-title {
+    margin-top: 30px;
+}
+
+.details-p {
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 15px;
+    background-color: #f8f9fa;
+}
+
+.summary-p {
+    font-weight: bold;
+    font-size: 1.2em;
+    cursor: pointer;
+    list-style: none;
+    color: #25b9d7;
+    margin-bottom: 10px;
+}
