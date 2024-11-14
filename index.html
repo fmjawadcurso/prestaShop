@@ -1,891 +1,880 @@
 <!DOCTYPE html>
 <html lang="es">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Guía Completa de Configuración de PrestaShop</title>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Guía Completa de Configuración de PrestaShop</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+        <!-- Enlace a Bootstrap 5 -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+        <!-- enlaces a los estilos CSS personalizados -->
+        <link rel="stylesheet" href="css/styles.css">
+    </head>
 
-    <!-- Enlace a Bootstrap 5 -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- enlaces a los estilos CSS personalizados -->
-     <link rel="stylesheet" href="css/styles.css">
-</head>
+    <body>
+        <!-- Header -->
+        <header class="fixed-top p-3 shadow-sm">
+            <div class="container d-flex justify-content-between align-items-center">
+                <!-- Logo de PrestaShop -->
+                <img src="./img/PrestaShop-Logo-thumb.png" alt="Logo de PrestaShop" class="me-3" style="width: 138,46px; height: 80px;">
+                
+                <!-- Títulos -->
+                <div class="text-center w-100">
+                    <!-- <h1 class="mb-0" style="font-size: 1.8rem;">PrestaShop</h1> -->
+                    <h1 class=" center mb-0" style="font-size: 1.8rem; ">Guía Completa de Configuración de Parámetros de Tienda</h1>
+                </div>
+            </div>
+        </header>
 
-<body>
+        <div class="container">
 
-    <!-- Header -->
-    <header>
-        <h1>PRESTA SHOP</h1>
-        <h2>Guía Completa de Configuración Parametros de Tienda</h2>
-    </header>
-
-    <div class="container">
-
-        <!-- Configuración -->
-        <section id="configuracion"></section>
-        <details class="details-p">
-            <summary class="summary-p">⚙ 1.CONFIGURACIÓN </summary>
-
-            <h3>1.1 Configuración General</h3>
-            <p>La página de <strong>Configuración General</strong> contiene varios parámetros que afectan la
-                funcionalidad básica de tu tienda y que no se ajustan a otras secciones.<br>
-                A continuación, te explicamos cómo configurar cada una de estas opciones</p>
-            <ul>
-                <li><strong>Habilitar SSL (Capa de Sockets Seguros):</strong><br>
-                    Activa la protección de datos sensibles mediante SSL(Secure Sockets Layer) .
-                </li>
-                <li><strong>Aumentar la seguridad en el frontend:</strong><br>
-                    Agrega tokens únicos a las URLs para proteger la sesión del cliente durante la compra.
-                </li>
-                <li><strong>Permitir iframes en campos HTML:</strong><br>
-                    Permite insertar contenido externo como videos o mapas. Recomendado solo si es necesario.
-                </li>
-                <li><strong>Usar la biblioteca HTMLPurifier:</strong><br>
-                    Filtra y limpia datos enviados por usuarios para evitar ataques maliciosos. Recomendado activarla.
-                </li>
-                <li><strong>Modo de redondeo:</strong> <br>
-                    Ajusta los precios para mostrarse con el número de decimales especificado, afectando cálculos de
-                    impuestos y descuentos. <br>
-                    Puedes redondear valores de diferentes formas, como redondeo hacia arriba, hacia abajo o al número
-                    par/impar más cercano.
-                </li>
-                <li><strong>Tipos de Redondeo:</strong> <br>
-                    Aplica el redondeo en cada artículo individual, en cada línea de pedido o en el total final.
-                </li>
-                <li><strong>Número de decimales:</strong><br>
-                    Define los decimales a los que se redondeará el precio, por ejemplo, a dos decimales ($42.33).
-                </li>
-                <li><strong>Mostrar marcas y proveedores:</strong><br>
-                    Habilita las páginas de marcas y proveedores en el frontend incluso si los módulos están
-                    desactivados.
-                </li>
-                <li><strong>Mostrar los más vendidos:</strong><br>
-                    Permite mostrar una lista de los productos más populares en el frontendde tu tienda,<br>
-                    incluso si el módulo de "Productos más vendidos" está desactivado. Esto permite que tus clientes
-                    vean qué productos están siendo más populares en tu tienda, lo que puede aumentar las ventas..
-                </li>
-                <li><strong>Habilitar Multitienda:</strong><br>
-                    Transforma tu PrestaShop en una configuración de múltiples tiendas, permitiendo gestión
-                    centralizada.</li>
-                <li><strong>Actividad principal de la tienda:</strong><br>
-                    Selecciona la actividad correcta para configurar parámetros fiscales y otros aspectos de acuerdo a
-                    tu tipo de negocio.
-                </li>
-                <figure class="my-4">
-                    <img src="./img/config-general.png" alt="Captura de SSL en todas las páginas"
-                        class="img-fluid rounded">
-                    <figcaption>Figura 1.1:Configuración General.</figcaption>
-                </figure>
-            </ul>
+            <!-- Configuración -->
+            <section id="configuracion" class="container my-5">
+                    <details id="det-configuracion" class="details-p">
+                        <summary class="summary-p">⚙ 1.CONFIGURACIÓN </summary>
+                        <h3>1.1 Configuración General</h3>
+                        <p>La página de <strong>Configuración General</strong> contiene varios parámetros que afectan la
+                            funcionalidad básica de tu tienda y que no se ajustan a otras secciones.<br>
+                            A continuación, te explicamos cómo configurar cada una de estas opciones</p>
+                        <ul >
+                            <li class="mb-3"><strong>Habilitar SSL (Capa de Sockets Seguros):</strong><br>
+                                Activa la protección de datos sensibles mediante <code>SSL</code>(Secure Sockets Layer) .
+                            </li>
+                            <li class="mb-3"><strong>Aumentar la seguridad en el frontend:</strong><br>
+                                Agrega <code>tokens únicos</code>tokens únicos a las URLs para proteger la sesión del cliente durante la compra.
+                            </li>
+                            <li class="mb-3"><strong>Permitir iframes en campos HTML:</strong><br>
+                                Permite insertar contenido externo como videos o mapas. Recomendado solo si es necesario.
+                            </li>
+                            <li class="mb-3"><strong>Usar la biblioteca HTMLPurifier:</strong><br>
+                                Filtra y limpia datos enviados por usuarios para evitar ataques maliciosos. Recomendado activarla.
+                            </li>
+                            <li class="mb-3"><strong>Modo de redondeo:</strong> <br>
+                                Ajusta los precios para mostrarse con el número de decimales especificado, afectando cálculos de
+                                impuestos y descuentos. <br>
+                                Puedes redondear valores de diferentes formas, como redondeo hacia arriba, hacia abajo o al número
+                                par/impar más cercano.
+                            </li>
+                            <li class="mb-3"><strong>Tipos de Redondeo:</strong> <br>
+                                Aplica el redondeo en cada artículo individual, en cada línea de pedido o en el total final.
+                            </li>
+                            <li class="mb-3"><strong>Número de decimales:</strong><br>
+                                Define los decimales a los que se redondeará el precio, por ejemplo, a dos decimales ($42.33).
+                            </li>
+                            <li class="mb-3"><strong>Mostrar marcas y proveedores:</strong><br>
+                                Habilita las páginas de marcas y proveedores en el frontend incluso si los módulos están
+                                desactivados.
+                            </li>
+                            <li class="mb-3"><strong>Mostrar los más vendidos:</strong><br>
+                                Permite mostrar una lista de los productos más populares en el frontendde tu tienda,<br>
+                                incluso si el módulo de "Productos más vendidos" está desactivado. Esto permite que tus clientes
+                                vean qué productos están siendo más populares en tu tienda, lo que puede aumentar las ventas..
+                            </li>
+                            <li class="mb-3"><strong>Habilitar Multitienda:</strong><br>
+                                Transforma tu PrestaShop en una configuración de múltiples tiendas, permitiendo gestión
+                                centralizada.</li>
+                            <li class="mb-3"><strong>Actividad principal de la tienda:</strong><br>
+                                Selecciona la actividad correcta para configurar parámetros fiscales y otros aspectos de acuerdo a
+                                tu tipo de negocio.
+                            </li>
+                            <figure class="my-4">
+                                <img src="./img/config-general.png" alt="Captura de SSL en todas las páginas"
+                                    class="img-fluid rounded">
+                                <figcaption>Figura 1.1:Configuración General.</figcaption>
+                            </figure>
+                        </ul>
 
 
-            <h3>1.2 Mantenimiento</h3>
-            <p>La página de Mantenimiento permite realizar cambios sin que los clientes vean los cambios hasta que
-                decidas hacerlos públicos. Es útil cuando agregas productos, pruebas funciones o modificas temas.</p>
-            <ul>
-                <li><strong>Habilitar tienda:</strong><br>
-                    Desactiva temporalmente la tienda para realizar mantenimiento Por ejemplo, si necesitas realizar
-                    tareas de mantenimiento o agregar productos masivamente, <br>
-                    puedes poner tu tienda en modo de mantenimiento para que los clientes no puedan acceder a ella.Sin
-                    embargo, <br>
-                    puedes seguir trabajando en tu tienda y realizar todos los cambios necesarios sin que los usuarios
-                    los vean hasta que estés listo para hacerlos públicos.
-                </li>
-                <li><strong>IP de mantenimiento:</strong> Agrega IPs específicas para que ciertas personas accedan a la
-                    tienda durante el mantenimiento. <br>
-                    Para agregar tu IP, simplemente accede a un sitio web como What is my IP desde la máquina en la que
-                    estás trabajando, y luego haz clic en <strong style="color: #88b5e5;">"Añadir mi IP"</strong> para
-                    agregarla a la lista o <br>
-                    Abre la consola de comandos (CMD) y escribe ipconfig. La dirección IP se mostrará bajo "Dirección
-                    IPv4".
-                </li>
-                <li><strong>Texto personalizado de mantenimiento:</strong><br>
-                    Muestra un mensaje personalizado explicando el motivo del mantenimiento y cuándo volverá a estar
-                    disponible la tienda.
-                </li>
-                <figure class="my-4">
-                    <img src="./img/configurar-mantinamiento.png" alt="configurar-mantinamiento"
-                        class="img-fluid rounded">
-                    <figcaption>Figura 1.1:Configuración General.</figcaption>
-                </figure>
-            </ul>
+                        <h3>1.2 Mantenimiento</h3>
+                        <p>La página de Mantenimiento permite realizar cambios sin que los clientes vean los cambios hasta que
+                            decidas hacerlos públicos. Es útil cuando agregas productos, pruebas funciones o modificas temas.</p>
+                        <ul>
+                            <li class="mb-3"><strong>Habilitar tienda:</strong><br>
+                                Desactiva temporalmente la tienda para realizar mantenimiento Por ejemplo, si necesitas realizar
+                                tareas de mantenimiento o agregar productos masivamente, <br>
+                                puedes poner tu tienda en modo de mantenimiento para que los clientes no puedan acceder a ella.Sin
+                                embargo, <br>
+                                puedes seguir trabajando en tu tienda y realizar todos los cambios necesarios sin que los usuarios
+                                los vean hasta que estés listo para hacerlos públicos.
+                            </li>
+                            <li class="mb-3"><strong>IP de mantenimiento:</strong> Agrega IPs específicas para que ciertas personas accedan a la
+                                tienda durante el mantenimiento. <br>
+                                Para agregar tu IP, simplemente accede a un sitio web como <a href="https://www.whatismyip.com/" style="text-decoration: none;"><strong>What is my IP</strong></a> desde la máquina en la que</code> 
+                                estás trabajando, y luego haz clic en <strong style="color: #88b5e5;">"Añadir mi IP"</strong> para
+                                agregarla a la lista o <br>
+                                Abre la consola de comandos <code>(CMD)</code> y escribe ipconfig. La dirección IP se mostrará bajo <code>"Dirección IPv4"</code>
+                                .
+                            </li>
+                            <li class="mb-3"><strong>Texto personalizado de mantenimiento:</strong><br>
+                                Muestra un mensaje personalizado explicando el motivo del mantenimiento y cuándo volverá a estar
+                                disponible la tienda.
+                            </li>
+                            <figure class="my-4">
+                                <img src="./img/configurar-mantinamiento.png" alt="configurar-mantinamiento"
+                                    class="img-fluid rounded">
+                                <figcaption>Figura 1.1:Configuración General.</figcaption>
+                            </figure>
+                        </ul>
+                        <div class="text-center">
+                            <button onclick="document.getElementById('det-configuracion').open = false" class="btn btn-info mt-3">
+                                CERRAR
+                            </button>
+                        </div>
 
-        </details>
-        </section>
+                    </details>
+            </section>
 
-        <!-- Configuración de Pedidos -->
-        <!-- <section id="configuracion-pedidos">
-            <details class="details-p">
-                <summary class="summary-p">2. CONFIGURACIÓN DE PEDIDOS</summary>
+            <!-- Configuración de Pedidos -->
+            <section id="configuracion-pedidos">
+                <details id="det-pedido" class="details-p">
+                    <summary class="summary-p">🛒 2.CONFIGURACIÓN DE PEDIDOS </summary>
 
-                <h3>2.1 Preferencias Generales</h3>
-                <ul>
-                    <li><strong>Habilitar resumen final:</strong><br>
-                         Mostrar un resumen mostrando las direcciones, método de envío y contenido del carrito, antes del botón de pedido (Obligatorio en algunos países europeos).
-                    </li>
-                    <li><strong>Habilitar compra como invitado:</strong> <br>
-                         Permite a usuarios realizar pedidos sin necesidad de crear una cuenta.</li>
-                    <li><strong>Deshabilitar opción de reordenar:</strong><br>
-                         Desactiva la opción de reordenar un pedido anterior desde el historial.</li>
-                    <li><strong>Total mínimo de compra requerido para validar un pedido:</strong><br>
-                         Define un monto mínimo para completar un pedido.
+                    <h3>2.1 Preferencias Generales</h3>
+                    <ul>
+                        <li class="mb-3"><strong>Habilitar resumen final:</strong> <br>
+                            Mostrar un resumen con direcciones, método de envío y contenido del carrito antes del botón de
+                            pedido (requerido en algunos países europeos).
                         </li>
-                    <li><strong>Recalcular los costos de envío después de la edición del pedido:</strong><br>
-                         Actualiza automáticamente los costos de envío si se modifica un pedido.
+                        <li class="mb-3"><strong>Habilitar compra como invitado:</strong> <br>
+                            Permite a los usuarios realizar pedidos sin necesidad de crear una cuenta.
                         </li>
-                    <li><strong>Envío retrasado:</strong><br>
-                        Si permites la opción de "Permitir pedidos de productos fuera de stock" (en la configuración de productos),<br>
-                         puedes dividir los pedidos en envíos separados. Los productos disponibles se enviarán de inmediato,<br>
-                          mientras que los productos fuera de stock quedarán pendientes para un envío posterior.
-                    </li>
-                    <li><strong>Términos de servicio:</strong> <br>
-                        Al habilitar esta opción, los clientes deberán aceptar tus términos de servicio antes de poder validar su pedido.
-                         Esto es importante para asegurar que los clientes estén informados de las condiciones de .
-                    </li>
+                        <li class="mb-3"><strong>Deshabilitar opción de reordenar:</strong> <br>
+                            Desactiva la opción de reordenar un pedido desde el historial.
+                        </li>
+                        <li class="mb-3"><strong>Total mínimo de compra para validar un pedido:</strong> <br>
+                            Define un monto mínimo para completar un pedido.
+                        </li>
+                        <li class="mb-3"><strong>Recalcular costos de envío después de editar el pedido:</strong> <br>
+                            Actualiza automáticamente los costos de envío si se modifica un pedido.
+                        </li>
+                        <li class="mb-3"><strong>Envío retrasado:</strong> <br>
+                            Si permites la opción de "Permitir pedidos de productos fuera de stock" (en la configuración de
+                            productos),<br>
+                            puedes dividir los pedidos en envíos separados. Los productos disponibles se enviarán de
+                            inmediato,<br>
+                            mientras que los productos fuera de stock quedarán pendientes para un envío posterior.k.
+                        </li>
+                        <li class="mb-3"><strong>Términos de servicio:</strong> <br>
+                            Al habilitar esta opción, los clientes deberán aceptar tus términos de servicio antes de poder
+                            validar su pedido.
+                            Esto es importante para asegurar que los clientes estén informados de las condiciones de .
+                        </li>
+                    </ul>
+
                     <figure class="my-4">
                         <img src="./img/config-padido.png" alt="Configurar pedidos" class="img-fluid rounded">
-                        <figcaption>Figura 2.1: configurar pedidos.</figcaption>
-                    </figure>
-                </ul>
-                <h3>2.1.1 Opciones de Regalo</h3>
-                <ul>
-                    <li><strong>Ofrecer envoltura de regalo:</strong> Añade la opción de envolver como regalo y agregar un mensaje.</li>
-                    <li><strong>Precio de envoltura de regalo:</strong> Define el precio para el servicio de envoltura de regalo.</li>
-                    <li><strong>Impuesto sobre la envoltura de regalo:</strong> Asigna el impuesto correspondiente.</li>
-                    <li><strong>Ofrecer embalaje reciclado:</strong> Permite a los clientes optar por un embalaje ecológico.</li>
-                </ul>
-                <figure class="my-4">
-                    <img src="./img/config-padido-regalo.png" alt="Configurar pedidos opcin regalo" class="img-fluid rounded">
-                    <figcaption>Figura 2.1: configurar opcion regalo.</figcaption>
-                </figure>
-                <h3>2.2 Estados de los Pedidos</h3>
-                <p>Los <strong>Estados de los Pedidos</strong> permiten gestionar de manera eficiente las órdenes y las devoluciones, además de mantener <br>
-                     informados a tus clientes sobre el progreso de sus compras. Puedes editar los estados de los pedidos a través <br>
-                      de la página de<strong>Estados</strong> Estados, en el menú <strong>Configuración de Pedidos</strong> .</p>
-                <figure class="my-4">
-                    <img src="./img/config-pedido-estado.png" alt="Configurar estado pedido" class="img-fluid rounded">
-                    <figcaption>Figura 2.2.a: configurar Estado de Pedido.</figcaption>
-                </figure>
-                <figure class="my-4">
-                    <img src="./img/config-pedido-estadoV.png" alt="Configurar estado de devolucion" class="img-fluid rounded">
-                    <figcaption>Figura 2.2.b: configurar estado de Devolucion.</figcaption>
-                </figure>
-                <ul>
-                    <li><strong>2.2.1. Creación de un nuevo estado de pedido:</strong><br>
-                        Personaliza el estado del pedido con nombre, color y opciones adicionales.
-                        <ol>
-                            <li><strong>Acceso</strong>: Haz clic en "Añadir nuevo estado de pedido" en la parte superior de la página de "Estados".</li>
-                            <li><strong>Formulario:</strong>Completa el formulario con:
-                                  <ul>
-                                    <li><strong></strong>Nombre del estado</strong> (corto y distintivo).</li>
-                                    <li><strong>Ícono :</strong> Puedes usar cualquier icono de 16x16 píxeles.</li>
-                                    <li><strong>Color:</strong> elige colores predefinidos como rojo para pedidos cancelados, verde para entregados, etc.</li>
-                                  </ul>
-                            </li>
-                            <li>3.	<strong>Opciones:</strong> 
-                                <ul>
-                                    <li>Marcar el pedido como validado.</li>
-                                    <li>Permitir descarga de la factura PDF.</li>
-                                    <li>Enviar un correo al cliente con el cambio de estado y adjuntar PDF de la factura o albarán</li>
-                                    <li>Marcar el pedido como "Enviado" o "Pagado", con restricciones para revertir estos estados.</li>
-                                </ul>
-                            </li>
-                        </ol>
-                    </li>
-                    <figure class="my-4">
-                        <img src="./img/Anadir-Estado.png" alt="Configurar estado de pedido" class="img-fluid rounded">
-                        <figcaption>Figura 2.2.b: Añdir estado de Pedido.</figcaption>
-                    </figure>
-                    <li><strong>Estados de devolución:</strong><br>
-                         Permite gestionar estados específicos para pedidos devueltos.
-                         <ol>
-                            <li>1.	<strong>Acceso</strong>: 1.	Haz clic en "Añadir nuevo estado de devolución" en la parte superior.</li>
-                            <li>2.	<strong>Formulario:</strong>Completa el formulario con:
-                                  <ul>
-                                    <li><strong></strong>Nombre del estado</strong> (corto y claro).</li>
-                                  
-                                    <li><strong>Color:</strong>Selecciona el color para este estado</li>
-                                  </ul>
-                            </li>
-                            <li><strong>Guarda el estado.</strong> </li>
-                         </ol>
-                    </li>
-                    <figure class="my-4">
-                        <img src="./img/anadir-estadoV.png" alt="ñadirr estado de pedido de devolucion" class="img-fluid rounded">
-                        <figcaption>Figura 2.2.b: Añdir estado de de devolución.</figcaption>
-                    </figure>
-                </ul>
-
-
-            </details>
-        </section> -->
-
-        <!-- Configuración de Pedidos -->
-        <section id="configuracion-pedidos">
-            <details class="details-p">
-                <summary class="summary-p">🛒 2.CONFIGURACIÓN DE PEDIDOS </summary>
-
-                <h3>2.1 Preferencias Generales</h3>
-                <ul>
-                    <li><strong>Habilitar resumen final:</strong> <br>
-                        Mostrar un resumen con direcciones, método de envío y contenido del carrito antes del botón de
-                        pedido (requerido en algunos países europeos).
-                    </li>
-                    <li><strong>Habilitar compra como invitado:</strong> <br>
-                        Permite a los usuarios realizar pedidos sin necesidad de crear una cuenta.
-                    </li>
-                    <li><strong>Deshabilitar opción de reordenar:</strong> <br>
-                        Desactiva la opción de reordenar un pedido desde el historial.
-                    </li>
-                    <li><strong>Total mínimo de compra para validar un pedido:</strong> <br>
-                        Define un monto mínimo para completar un pedido.
-                    </li>
-                    <li><strong>Recalcular costos de envío después de editar el pedido:</strong> <br>
-                        Actualiza automáticamente los costos de envío si se modifica un pedido.
-                    </li>
-                    <li><strong>Envío retrasado:</strong> <br>
-                        Si permites la opción de "Permitir pedidos de productos fuera de stock" (en la configuración de
-                        productos),<br>
-                        puedes dividir los pedidos en envíos separados. Los productos disponibles se enviarán de
-                        inmediato,<br>
-                        mientras que los productos fuera de stock quedarán pendientes para un envío posterior.k.
-                    </li>
-                    <li><strong>Términos de servicio:</strong> <br>
-                        Al habilitar esta opción, los clientes deberán aceptar tus términos de servicio antes de poder
-                        validar su pedido.
-                        Esto es importante para asegurar que los clientes estén informados de las condiciones de .
-                    </li>
-                </ul>
-
-                <figure class="my-4">
-                    <img src="./img/config-padido.png" alt="Configurar pedidos" class="img-fluid rounded">
-                    <figcaption>Figura 2.1: Configuración de pedidos.</figcaption>
-                </figure>
-
-                <h3 class="section-title">2.1.1 Opciones de Regalo</h3>
-                <ul>
-                    <li><strong>Ofrecer envoltura de regalo:</strong> Permite a los clientes seleccionar envoltura de
-                        regalo y mensaje personalizado.</li>
-                    <li><strong>Precio de envoltura de regalo:</strong> Define el costo del servicio de envoltura de
-                        regalo.</li>
-                    <li><strong>Impuesto sobre envoltura de regalo:</strong> Asigna el impuesto correspondiente.</li>
-                    <li><strong>Ofrecer embalaje reciclado:</strong> Opción para embalaje ecológico.</li>
-                </ul>
-
-                <figure class="my-4">
-                    <img src="./img/config-padido-regalo.png" alt="Configurar opción de regalo"
-                        class="img-fluid rounded">
-                    <figcaption>Figura 2.1: Configuración de opción de regalo.</figcaption>
-                </figure>
-
-                <h3 class="section-title">2.2 Estados de los Pedidos</h3>
-                <p>
-                    Los <strong>Estados de los Pedidos</strong> facilitan la gestión de órdenes y devoluciones,
-                    informando a los clientes sobre el progreso de sus compras. Edita los estados de los pedidos en la
-                    página de <strong>Estados</strong> en el menú de <strong>Configuración de Pedidos</strong>.
-                </p>
-
-                <figure class="my-4">
-                    <img src="./img/config-pedido-estado.png" alt="Configurar estado de pedido"
-                        class="img-fluid rounded">
-                    <figcaption>Figura 2.2.a: Configuración de Estado de Pedido.</figcaption>
-                </figure>
-                <figure class="my-4">
-                    <img src="./img/config-pedido-estadoV.png" alt="Configurar estado de devolución"
-                        class="img-fluid rounded">
-                    <figcaption>Figura 2.2.b: Configuración de Estado de Devolución.</figcaption>
-                </figure>
-
-                <ul>
-                    <li><strong>2.2.1 Creación de un nuevo estado de pedido:</strong> <br>
-                        Personaliza el estado del pedido con nombre, color y opciones adicionales.
-                        <ol>
-                            <li><strong>Acceso:</strong> Haz clic en "Añadir nuevo estado de pedido" en la parte
-                                superior de la página de "Estados".</li>
-                            <li><strong>Formulario:</strong> Completa con:
-                                <ul>
-                                    <li><strong>Nombre del estado:</strong> Corto y distintivo.</li>
-                                    <li><strong>Ícono:</strong> Cualquier icono de 16x16 píxeles.</li>
-                                    <li><strong>Color:</strong> Elige colores adecuados, como rojo para cancelados,
-                                        verde para entregados, etc.</li>
-                                </ul>
-                            </li>
-                            <li><strong>Opciones:</strong>
-                                <ul>
-                                    <li>Marcar el pedido como validado.</li>
-                                    <li>Permitir descarga de la factura en PDF.</li>
-                                    <li>Enviar correo al cliente con el cambio de estado y adjuntar PDF de factura.</li>
-                                    <li>Marcar el pedido como "Enviado" o "Pagado" (no reversible).</li>
-                                </ul>
-                            </li>
-                        </ol>
-                    </li>
-                    <figure class="my-4">
-                        <img src="./img/Anadir-Estado.png" alt="Configurar estado de pedido" class="img-fluid rounded">
-                        <figcaption>Figura 2.2.c: Añadir estado de Pedido.</figcaption>
+                        <figcaption>Figura 2.1: Configuración de pedidos.</figcaption>
                     </figure>
 
-                    <li><strong>Estados de devolución:</strong> <br>
-                        Permite gestionar estados específicos para pedidos devueltos.
-                        <ol>
-                            <li><strong>Acceso:</strong> Haz clic en "Añadir nuevo estado de devolución".</li>
-                            <li><strong>Formulario:</strong> Completa con:
-                                <ul>
-                                    <li><strong>Nombre del estado:</strong> Claro y distintivo.</li>
-                                    <li><strong>Color:</strong> Selecciona el color adecuado para este estado.</li>
-                                </ul>
-                            </li>
-                            <li><strong>Guardar el estado:</strong> Finaliza la creación del nuevo estado.</li>
-                        </ol>
-                    </li>
-                    <figure class="my-4">
-                        <img src="./img/anadir-estadoV.png" alt="Añadir estado de devolución" class="img-fluid rounded">
-                        <figcaption>Figura 2.2.d: Añadir estado de Devolución.</figcaption>
-                    </figure>
-                </ul>
-            </details>
-        </section>
-
-
-        <!-- Configuración de Productos -->
-        <section id="configuracion-productos">
-            <details class="details-p">
-                <summary class="summary-p">📦 3.CONFIGURACIÓN DE PRODUCTOS </summary>
-                <h3>3.1 Ajustes generales de producto</h3>
-                <ul>
-                    <li><strong>Modo catálogo:</strong> <br>
-                        Convierte la tienda en una galería sin opción de compra. <br>
-                        El modo catálogo desactiva el carrito de la compra en tu tienda. Los visitantes podrán navegar a
-                        través del catálogo de productos,<br>
-                        pero no podrán adquirirlos
-
-                    </li>
-                    <li><strong>Número de días que un producto se considera 'nuevo':</strong> <br> Establece el tiempo
-                        para promocionar productos nuevos.</li>
-                    <li><strong>Tamaño máximo del resumen del producto:</strong><br> Limita la extensión de la
-                        descripción.</li>
-                    <li><strong>Descuento por cantidad basado en:</strong><br> Configura descuentos basados en producto
-                        individual o combinaciones.</li>
-                    <li><strong>Forzar actualización de la URL amigable:</strong><br> Actualiza automáticamente la URL
-                        si cambia el nombre del producto.</li>
-                    <li><strong>Activar nuevos productos por defecto:</strong> <br> Los productos nuevos se activan
-                        automáticamente al ser creados.</li>
-                    <figure class="my-4">
-                        <img src="img/confi-preducto.png" alt="Configuración de Preducto" class="img-fluid rounded">
-                        <figcaption>Figura 3.1: Configuración de Preducto.</figcaption>
-                    </figure>
-                </ul>
-
-                <h3>3.3 Página del producto</h3>
-                <ul>
-                    <li><strong>Mostrar cantidades disponibles:</strong> Informa a los clientes del stock disponible en
-                        la página de producto.</li>
-                    <li><strong>Mostrar el botón "Añadir al carrito":</strong> Evita agregar productos al carrito sin
-                        seleccionar atributos específicos.</li>
-                    <li><strong>Separador del ancla de atributo en los enlaces de producto:</strong> Elige el separador
-                        entre atributos de producto en las URL, que puede ser una coma (",") o un guion ("-")..</li>
-                    <li><strong>Mostrar el precio unitario con descuento:</strong> muestra el precio unitario descontado
-                        en vez del descuento unitario.</li>
-                    <figure class="my-4">
-                        <img src="img/config-paginaProducto.png" alt="Configuración pagina de Preducto"
-                            class="img-fluid rounded">
-                        <figcaption>Figura 3.2: Configuración pagina de Preducto.</figcaption>
-                    </figure>
-                </ul>
-
-                <h3>3.4 Stock de Productos</h3>
-                <ul>
-                    <li><strong>Habilitar gestión de stock:</strong><br> Controla el inventario de productos y se
-                        actualiza automáticamente con cada compra.</li>
-                    <li><strong>Gestión de stock de packs por defecto:</strong><br> Esta opción determina cómo se
-                        actualiza el stock cuando se venden packs de productos. Las opciones son:
-                        <ul>
-                            <li><strong>Decrementar solo el packs:</strong> : Solo se actualiza el stock del pack cuando
-                                se vende.</li>
-                            <li><strong>Decrementar solo los productos del pack:</strong> Solo se actualiza el stock de
-                                los productos dentro del pack.</li>
-                            <li><strong>Decrementar ambos: </strong> Se actualizan tanto el stock del pack como el de
-                                los productos individuales cuando se vende un pack.</li>
-                        </ul>
-                    </li>
-                    <li><strong>Mostrar atributos no disponibles en la página del producto:</strong> <br> Si un producto
-                        solo tiene una combinación o un atributo no tiene stock en todas las combinaciones posibles,<br>
-                        puedes elegir ocultar ese atributo en la página del producto
-                    </li>
-                    <li><strong>Mostrar número de productos disponibles si su cantidad es inferior a</strong>
-                        <br>Establecer a "0" para desactivar esta característica..</li>
-                    <li><strong>Permitir la compra de productos fuera de stock:</strong> <br>Si activas esta opción, los
-                        clientes podrán seguir comprando productos que ya no estén en stock.</li>
-                    <li><strong>Etiqueta de productos en stock:</strong> <br>Muestra una etiqueta para los productos que
-                        están disponibles en stock.</li>
-                    <li><strong>Etiqueta de productos fuera de stock con pedidos permitidos:</strong> <br>Muestra una
-                        etiqueta para los productos fuera de stock, pero que permiten realizar pedidos con espera de
-                        reposición</li>
-                    <li><strong>Tiempo de entrega de productos en stock:</strong> <br>Muestra el tiempo de entrega
-                        estimado para los productos fuera de stock, pero que permiten realizar pedidos.</li>
-                    <li><strong>• Mostrar etiqueta de fuera de stock en las páginas de listado de productos:</strong>
-                        <br>Muestra una etiqueta "Agotado" junto a los productos fuera de stock en las páginas de
-                        listado de productos.</li>
-                    <figure class="my-4">
-                        <img src="img/config-stock.png" alt="Configuración stock de Preducto" class="img-fluid rounded">
-                        <img src="img/config-stock2.png" alt="Configuración stock de Preducto"
-                            class="img-fluid rounded">
-                        <figcaption>Figura 3.2: Configuración stock de Preducto.</figcaption>
-                    </figure>
-                </ul>
-                <h3>3.2 Paginación</h3>
-                <ul>
-                    <li><strong>Productos por página:</strong> Establece el número de productos a mostrar en cada página
-                        de categorías.</li>
-                    <li><strong>Orden predeterminado:</strong> Establece cómo se ordenan los productos: por nombre,
-                        precio, fecha de adición, fecha de modificación, posición en la categoría, marca, cantidad
-                        disponible o referencia..</li>
-                    <li><strong>3. Método de orden:</strong> Elige si el orden será ascendente o descendente.</li>
-                    <figure class="my-4">
-                        <img src="img/config-paginacion.png" alt="Configuración paginacion" class="img-fluid rounded">
-                        <figcaption>Figura 3.2: Configuración paginación.</figcaption>
-                    </figure>
-                </ul>
-            </details>
-        </section>
-
-        <!-- Configuración de Clientes -->
-        <section id="configuracion-clientes">
-            <details class="details-p">
-                <summary class="summary-p">🤵4.CONFIGURACIÓN DE CLIENTES</summary>
-
-                <h3>4.1 configuración de Clientes</h3>
-                <ul>
-                    <li><strong>Volver a mostrar el carrito al iniciar sesión:</strong> Restaura el carrito al iniciar
-                        sesión.</li>
-                    <li><strong>Enviar un correo tras el registro:</strong> Envía un correo de bienvenida con la
-                        información de la cuenta al registrarse.</li>
-                    <li><strong>Retraso para restablecer la contraseña:</strong> Define un límite de tiempo entre cada
-                        solicitud de restablecimiento de contraseña.</li>
-                    <li><strong>Habilitar modo B2B:</strong>Activa funcionalidades para clientes empresariales, como
-                        precios personalizados y gestión de facturas.</li>
-                    <li><strong>Solicitar fecha de nacimiento:</strong> : Permite pedir la fecha de nacimiento del
-                        cliente durante el registro.</li>
-                    <li><strong>Ofertas de socios:</strong> : Permite ofrecer suscripciones a boletines de socios
-                        comerciales.</li>
-                    <figure class="my-4">
-                        <img src="img/config-cliente.png" alt="Configuración cliente" class="img-fluid rounded">
-                        <figcaption>Figura 4.1: Configuración cliente.</figcaption>
-                    </figure>
-                </ul>
-                <h3>4.2Grupos</h3>
-                <p>PrestaShop te permite asignar a tus clientes a diferentes grupos para otorgarles privilegios
-                    específicos. <br>
-                    Puedes crear tantos grupos como desees y asignar a un cliente a varios grupos.</p>
-                <ul>
-                    <li><strong>Grupos predeterminados:</strong> Asigna a los clientes a diferentes grupos (Visitante,
-                        Invitado, Cliente) con diferentes privilegios.
-                        <ul>
-                            <li><strong>Visitante:</strong>Personas sin cuenta de cliente o no autenticadas.</li>
-                            <li><strong>Invitado:</strong> Personas que han realizado un pedido usando la opción de
-                                Compra como <strong>invitado</strong>.</li>
-                            <li><strong>Cliente:</strong>Personas que han creado una cuenta y están autenticadas.</li>
-                            <figure class="my-4">
-                                <img src="img/clientes-gruop.png" alt="Configuración group cliente"
-                                    class="img-fluid rounded">
-                                <figcaption>Figura 4.2: Configuración group cliente.</figcaption>
-                            </figure>
-                        </ul>
-                    </li>
-                    <li><strong>Creación de un grupo:</strong> Haz clic en "Añadir nuevo grupo" para crear un grupo con
-                        las siguientes opciones:
-                        <ul>
-                            <li><strong>Nombre:</strong>Usa un nombre descriptivo para el grupo.</li>
-                            <li><strong>Descuento (%): </strong> Configura un descuento para todos los miembros de este
-                                grupo</li>
-                            <li><strong>Método de visualización de precios:</strong>o Elige el método de visualización
-                                de precios: con impuestos o sin impuestos.</li>
-                            <li><strong>Mostrar precios:</strong>Puedes restringir la visualización de precios a
-                                usuarios registrados, por ejemplo, ocultando los precios a los visitantes.</li>
-
-                            <figure class="my-4">
-                                <img src="img/añadir-group.png" alt="Añadir group cliente" class="img-fluid rounded">
-                                <figcaption>Figura 4.2.a: Añadir group cliente.</figcaption>
-                            </figure>
-                        </ul>
-                    </li>
-                </ul>
-                <h3>4.3Tratamiento</h3>
-                <p> permiten definir mejor a los clientes, lo que puede ser útil tanto para personalizar la relación con
-                    el cliente como para funciones de ciertos módulos.</p>
-                <figure class="my-4">
-                    <img src="img/titulos-sociales.png" alt="titulos socila" class="img-fluid rounded">
-                    <figcaption>Figura 4.3.a: Titulos Social.</figcaption>
-                </figure>
-                <ul>
-                    <li><strong>Agregar un nuevo título</strong>
-                        <ul>
-                            <li>Haz clic en el botón <strong>Añadir nuevo título social</strong>y completa el formulario
-                            </li>
-                            <li><strong>Título social:</strong>Elige un título común o único (ej. "Señor", "Lady",
-                                "Magnífico", "Jedi").</li>
-                            <li><strong>Género</strong>: Algunos títulos pueden aplicarse a ambos géneros, en cuyo caso
-                                se debe marcar como Neutral.</li>
-                            <li><strong>Imagen:</strong>Sube una imagen de 16x16 px para representar el título.</li>
-                            <li><strong>Guardar:</strong>Una vez completado, guarda el título social.</li>
-                        </ul>
-                    </li>
-                </ul>
-                <figure class="my-4">
-                    <img src="img/aniadir-titolus-social.png" alt="Añadir titulos socila" class="img-fluid rounded">
-                    <figcaption>Figura 4.3.a:Añadir Titulos Social.</figcaption>
-                </figure>
-            </details>
-        </section>
-
-        <!-- Contactos -->
-        <section id="contacto">
-            <details class="details-p">
-                <summary class="summary-p">☎ 5.CONTACTOS</summary>
-
-                <h3>5.1 Contacto</h3>
-                <ul>
-                    <li><strong>Puntos de contacto:</strong> Configura múltiples puntos de contacto para atención al
-                        cliente y otros servicios.</li>
-                    <figure class="my-4">
-                        <img src="img/contacto.png" alt=" contacto" class="img-fluid rounded">
-                        <figcaption>Figura 5.1: lista de Contacto.</figcaption>
-                    </figure>
-                    <li><strong>Crear una cuenta de contacto nueva:</strong>
-                        <ul>
-                            <li>1. Haz clic en<strong>"Añadir nuevo contacto"</strong>Elige un nombre para el contacto.
-                            </li>
-                            <li><strong>Título:</strong>Elige un nombre descriptivo para el punto de contacto.</li>
-                            <li><strong>Dirección de correo electrónico:</strong>Esta es la dirección a la que se
-                                enviarán los mensajes. </li>
-                            <li><strong>¿Guardar mensajes?: </strong>?: Decide si los mensajes enviados a este contacto
-                                deben guardarse en la herramienta de Atención al Cliente o simplemente ser enviados al
-                                correo electrónico.</li>
-                            <li><strong>Descripción: </strong>Añade una breve descripción (máximo una línea) que se
-                                mostrará en el formulario de contacto para que el cliente sepa el propósito del
-                                contacto.</li>
-                        </ul>
-                    </li>
-                    <figure class="my-4">
-                        <img src="img/Aniadir-contacto.png" alt="Añadir contacto" class="img-fluid rounded">
-                        <figcaption>Figura 5.1:Añadir contacto.</figcaption>
-                    </figure>
-                </ul>
-
-                <h3>5.2 Tienda</h3>
-                <p>Si tienes tiendas físicas, PrestaShop te permite listar sus detalles de contacto para que tus
-                    clientes puedan visitarlas.</p>
-                <ul>
-                    <li><strong>Lista de tiendas</strong><br>
-                        En la interfaz de administración, todas tus tiendas están listadas en una lista conveniente,<br>
-                        mostrando la información de cada tienda junto con un indicador que señala si la tienda está
-                        activa o no. <br>
-                        Esto es útil si deseas recopilar la información de una nueva tienda antes de su lanzamiento y
-                        tener la página lista para su presentación
-                    </li>
-                    <figure class="my-4">
-                        <img src="img/lista-tiendas.png" alt="lista-tiendas.png" class="img-fluid rounded">
-                        <figcaption>Figura 5.2:Lista-tiendas.</figcaption>
-                    </figure>
-                    <li><strong>Añadir una nueva tienda:</strong>Haz clic en<strong>"Añadir nueva tienda"</strong>y
-                        Completamos el formulario.</li>
-
-                    <figure class="my-4">
-                        <img src="img/aniadir-tienda.png" alt="lista-tiendas.png" class="img-fluid rounded">
-                        <figcaption>Figura 5.2:Lista-tiendas.</figcaption>
-                    </figure>
-
-                    <figure class="my-4">
-                        <img src="img/aniadir-tienda2.png" alt="lista-tiendas.png" class="img-fluid rounded">
-                        <figcaption>Figura 5.2:Lista-tiendas.</figcaption>
-                    </figure>
-                    <!-- <li><strong>Opciones de contacto de tienda:</strong> 
+                    <h3 class="section-title">2.1.1 Opciones de Regalo</h3>
                     <ul>
-                        <li>Los clientes pueden acceder a la página de Tiendas desde el pie de página de la tienda <br> para ver las direcciones y la información de contacto de tus tiendas físicas.</li>
-                         <li>•	No puedes desactivar esta funcionalidad si tienes tiendas físicas, pero puedes hacerla inaccesible para los clientes de las siguientes maneras:
-                            <ul>
-                                <li><strong>Desactivar o eliminar todas las tiendas</strong> en la página de administración de "Tiendas".</li>
-                                <li><strong>Eliminar el enlace en el pie de página: </strong> En la página de administración del Widget de Enlaces, elimina el enlace a las "Tiendas" del bloque "Nuestra empresa".</li>
-                            </ul>
-                         </li>
+                        <li><strong>Ofrecer envoltura de regalo:</strong> Permite a los clientes seleccionar envoltura de
+                            regalo y mensaje personalizado.</li>
+                        <li><strong>Precio de envoltura de regalo:</strong> Define el costo del servicio de envoltura de
+                            regalo.</li>
+                        <li><strong>Impuesto sobre envoltura de regalo:</strong> Asigna el impuesto correspondiente.</li>
+                        <li><strong>Ofrecer embalaje reciclado:</strong> Opción para embalaje ecológico.</li>
                     </ul>
-                    </li>
-                    <li><strong>Eliminar la página de Tiendas:</strong> Desactiva o elimina tiendas de la página de "Nuestra empresa".</li> -->
-                </ul>
-            </details>
-        </section>
 
-        <!-- Tráfico & SEO -->
-        <section id="seo">
-            <details class="details-p">
-                <summary class="summary-p">🔊 6.TRÁFICO & SEO</summary>
-
-                <h3>6.1 SEO y URLs</h3>
-                <p>Las herramientas incluidas en esta página te ayudarán a mejorar el posicionamiento de tu sitio
-                    PrestaShop en los motores de búsqueda, y así llegar a más clientes potenciales.</p>
-                <ul>
-                    <li>
-                        <h3> SEO y URLs </h3>
-                        <p>La página "SEO y URLs" te presenta un listado de todas esas páginas que sin duda se
-                            beneficiarán de las URLs amigables: páginas estáticas, páginas de la cuenta de usuario,
-                            páginas con contenidos generados automáticamente, <br>
-                            y te permite editar sus URLs amigables, así como sus etiquetas meta (título, descripción,
-                            palabras clave).
-                        </p>
-                    </li>
                     <figure class="my-4">
-                        <img src="img/lista-paginas.png" alt="lista paginas" class="img-fluid rounded">
-
+                        <img src="./img/config-padido-regalo.png" alt="Configurar opción de regalo"
+                            class="img-fluid rounded">
+                        <figcaption>Figura 2.1: Configuración de opción de regalo.</figcaption>
                     </figure>
 
-                    <li>
-                        <h3>Optimización SEO:</h3> Configura metaetiquetas (título, descripción, palabras clave) para
-                        mejorar la visibilidad de cada página en los motores de búsqueda.
-                    </li>
+                    <h3 class="section-title">2.2 Estados de los Pedidos</h3>
+                    <p>
+                        Los <strong>Estados de los Pedidos</strong> facilitan la gestión de órdenes y devoluciones,
+                        informando a los clientes sobre el progreso de sus compras. Edita los estados de los pedidos en la
+                        página de <strong>Estados</strong> en el menú de <strong>Configuración de Pedidos</strong>.
+                    </p>
+
                     <figure class="my-4">
-                        <img src="img/meta-tags.png" alt="meta-tags.png" class="img-fluid rounded">
+                        <img src="./img/config-pedido-estado.png" alt="Configurar estado de pedido"
+                            class="img-fluid rounded">
+                        <figcaption>Figura 2.2.a: Configuración de Estado de Pedido.</figcaption>
+                    </figure>
+                    <figure class="my-4">
+                        <img src="./img/config-pedido-estadoV.png" alt="Configurar estado de devolución"
+                            class="img-fluid rounded">
+                        <figcaption>Figura 2.2.b: Configuración de Estado de Devolución.</figcaption>
                     </figure>
 
-                    <li>
-                        <h3>Configuración de URLs</h3>
-                    </li>
                     <ul>
-                        <li><strong>Opciones de URL:</strong>
-                            <ul>
-                                <li><strong>URLs Amigables:</strong> Habilita URLs legibles para que las direcciones web
-                                    sean descriptivas. Requiere soporte de reescritura de URLs en el servidor.</li>
-                                <li><strong>URL Acentuada:</strong> Permite el uso de caracteres especiales en las URLs.
+                        <li><strong>2.2.1 Creación de un nuevo estado de pedido:</strong> <br>
+                            Personaliza el estado del pedido con nombre, color y opciones adicionales.
+                            <ol>
+                                <li class="mb-3"><strong>Acceso:</strong> Haz clic en "Añadir nuevo estado de pedido" en la parte
+                                    superior de la página de "Estados".</li>
+                                <li class="mb-3"><strong>Formulario:</strong> Completa con:
+                                    <ul>
+                                        <li><strong>Nombre del estado:</strong> Corto y distintivo.</li>
+                                        <li><strong>Ícono:</strong> Cualquier icono de 16x16 píxeles.</li>
+                                        <li><strong>Color:</strong> Elige colores adecuados, como rojo para cancelados,
+                                            verde para entregados, etc.</li>
+                                    </ul>
                                 </li>
-                                <li><strong>URL Canónica:</strong> Previene contenido duplicado al asignar una URL
-                                    preferida a cada página.</li>
+                                <li class="mb-3"><strong>Opciones:</strong>
+                                    <ul>
+                                        <li>Marcar el pedido como validado.</li>
+                                        <li>Permitir descarga de la factura en PDF.</li>
+                                        <li>Enviar correo al cliente con el cambio de estado y adjuntar PDF de factura.</li>
+                                        <li>Marcar el pedido como "Enviado" o "Pagado" (no reversible).</li>
+                                    </ul>
+                                </li>
+                            </ol>
+                        </li>
+                        <figure class="my-4">
+                            <img src="./img/Anadir-Estado.png" alt="Configurar estado de pedido" class="img-fluid rounded">
+                            <figcaption>Figura 2.2.c: Añadir estado de Pedido.</figcaption>
+                        </figure>
+
+                        <li><strong>Estados de devolución:</strong> <br>
+                            Permite gestionar estados específicos para pedidos devueltos.
+                            <ol>
+                                <li><strong>Acceso:</strong> Haz clic en "Añadir nuevo estado de devolución".</li>
+                                <li><strong>Formulario:</strong> Completa con:
+                                    <ul>
+                                        <li><strong>Nombre del estado:</strong> Claro y distintivo.</li>
+                                        <li><strong>Color:</strong> Selecciona el color adecuado para este estado.</li>
+                                    </ul>
+                                </li>
+                                <li><strong>Guardar el estado:</strong> Finaliza la creación del nuevo estado.</li>
+                            </ol>
+                        </li>
+                        <figure class="my-4">
+                            <img src="./img/anadir-estadoV.png" alt="Añadir estado de devolución" class="img-fluid rounded">
+                            <figcaption>Figura 2.2.d: Añadir estado de Devolución.</figcaption>
+                        </figure>
+                    </ul>
+                    <div class="text-center">
+                        <button onclick="document.getElementById('det-pedido').open = false" class="btn btn-info mt-3">
+                            CERRAR
+                        </button>
+                    </div>
+                </details>
+            </section>
+
+            <!-- Configuración de Productos -->
+            <section id="configuracion-productos">
+                <details id="det-producto" class="details-p">
+                    <summary class="summary-p">📦 3.CONFIGURACIÓN DE PRODUCTOS </summary>
+                    <h3>3.1 Ajustes generales de producto</h3>
+                    <ul>
+                        <li><strong>Modo catálogo:</strong> <br>
+                            Convierte la tienda en una galería sin opción de compra. <br>
+                            El modo catálogo desactiva el carrito de la compra en tu tienda. Los visitantes podrán navegar a
+                            través del catálogo de productos,<br>
+                            pero no podrán adquirirlos
+
+                        </li><br>
+                        <li><strong>Número de días que un producto se considera 'nuevo':</strong> <br> Establece el tiempo
+                            para promocionar productos nuevos.</li><br>
+                        <li><strong>Tamaño máximo del resumen del producto:</strong><br> Limita la extensión de la
+                            descripción.</li><br>
+                        <li><strong>Descuento por cantidad basado en:</strong><br> Configura descuentos basados en producto
+                            individual o combinaciones.</li><br>
+                        <li><strong>Forzar actualización de la URL amigable:</strong><br> Actualiza automáticamente la URL
+                            si cambia el nombre del producto.</li><br>
+                        <li><strong>Activar nuevos productos por defecto:</strong> <br> Los productos nuevos se activan
+                            automáticamente al ser creados.</li>
+                        <figure class="my-4">
+                            <img src="img/confi-preducto.png" alt="Configuración de Preducto" class="img-fluid rounded">
+                            <figcaption>Figura 3.1: Configuración de Preducto.</figcaption>
+                        </figure>
+                    </ul>
+
+                    <h3>3.3 Página del producto</h3>
+                    <ul>
+                        <li><strong>Mostrar cantidades disponibles:</strong> Informa a los clientes del stock disponible en
+                            la página de producto.</li>
+                        <li><strong>Mostrar el botón "Añadir al carrito":</strong> Evita agregar productos al carrito sin
+                            seleccionar atributos específicos.</li>
+                        <li><strong>Separador del ancla de atributo en los enlaces de producto:</strong> Elige el separador
+                            entre atributos de producto en las URL, que puede ser una coma (",") o un guion ("-")..</li>
+                        <li><strong>Mostrar el precio unitario con descuento:</strong> muestra el precio unitario descontado
+                            en vez del descuento unitario.</li>
+                        <figure class="my-4">
+                            <img src="img/config-paginaProducto.png" alt="Configuración pagina de Preducto"
+                                class="img-fluid rounded">
+                            <figcaption>Figura 3.2: Configuración pagina de Preducto.</figcaption>
+                        </figure>
+                    </ul>
+
+                    <h3>3.4 Stock de Productos</h3>
+                    <ul>
+                        <li><strong>Habilitar gestión de stock:</strong><br> Controla el inventario de productos y se
+                            actualiza automáticamente con cada compra.</li><br>
+                        <li><strong>Gestión de stock de packs por defecto:</strong><br> Esta opción determina cómo se
+                            actualiza el stock cuando se venden packs de productos. Las opciones son:
+                            <ul>
+                                <li><strong>Decrementar solo el packs:</strong> : Solo se actualiza el stock del pack cuando
+                                    se vende.</li>
+                                <li><strong>Decrementar solo los productos del pack:</strong> Solo se actualiza el stock de
+                                    los productos dentro del pack.</li>
+                                <li><strong>Decrementar ambos: </strong> Se actualizan tanto el stock del pack como el de
+                                    los productos individuales cuando se vende un pack.</li>
+                            </ul>
+                        </li><br>
+                        <li><strong>Mostrar atributos no disponibles en la página del producto:</strong> <br> Si un producto
+                            solo tiene una combinación o un atributo no tiene stock en todas las combinaciones posibles,<br>
+                            puedes elegir ocultar ese atributo en la página del producto
+                        </li><br>
+                        <li><strong>Mostrar número de productos disponibles si su cantidad es inferior a</strong>
+                            <br>Establecer a "0" para desactivar esta característica..</li><br>
+                        <li><strong>Permitir la compra de productos fuera de stock:</strong> <br>Si activas esta opción, los
+                            clientes podrán seguir comprando productos que ya no estén en stock.</li><br>
+                        <li><strong>Etiqueta de productos en stock:</strong> <br>Muestra una etiqueta para los productos que
+                            están disponibles en stock.</li><br>
+                        <li><strong>Etiqueta de productos fuera de stock con pedidos permitidos:</strong> <br>Muestra una
+                            etiqueta para los productos fuera de stock, pero que permiten realizar pedidos con espera de
+                            reposición</li><br>
+                        <li><strong>Tiempo de entrega de productos en stock:</strong> <br>Muestra el tiempo de entrega
+                            estimado para los productos fuera de stock, pero que permiten realizar pedidos.</li><br>
+                        <li><strong>Mostrar etiqueta de fuera de stock en las páginas de listado de productos:</strong>
+                            <br>Muestra una etiqueta "Agotado" junto a los productos fuera de stock en las páginas de
+                            listado de productos.</li>
+                        <figure class="my-4">
+                            <img src="img/config-stock.png" alt="Configuración stock de Preducto" class="img-fluid rounded">
+                            <img src="img/config-stock2.png" alt="Configuración stock de Preducto"
+                                class="img-fluid rounded">
+                            <figcaption>Figura 3.2: Configuración stock de Preducto.</figcaption>
+                        </figure>
+                    </ul>
+                    <h3>3.2 Paginación</h3>
+                    <ul>
+                        <li><strong>Productos por página:</strong> Establece el número de productos a mostrar en cada página
+                            de categorías.</li><br>
+                        <li><strong>Orden predeterminado:</strong> Establece cómo se ordenan los productos: por nombre,
+                            precio, fecha de adición, fecha de modificación, posición en la categoría, marca, cantidad
+                            disponible o referencia..</li><br>
+                        <li><strong>3. Método de orden:</strong> Elige si el orden será ascendente o descendente.</li>
+                        <figure class="my-4">
+                            <img src="img/config-paginacion.png" alt="Configuración paginacion" class="img-fluid rounded">
+                            <figcaption>Figura 3.2: Configuración paginación.</figcaption>
+                        </figure>
+                    </ul>
+                    <div class="text-center">
+                        <button onclick="document.getElementById('det-producto').open = false" class="btn btn-info mt-3">
+                            CERRAR
+                        </button>
+                    </div>
+                </details>
+            </section>
+
+            <!-- Configuración de Clientes -->
+            <section id="configuracion-clientes">
+                <details id="det-cliente" class="details-p">
+                    <summary class="summary-p">🤵4.CONFIGURACIÓN DE CLIENTES</summary>
+
+                    <h3>4.1 configuración de Clientes</h3>
+                    <ul>
+                        <li><strong>Volver a mostrar el carrito al iniciar sesión:</strong> Restaura el carrito al iniciar
+                            sesión.</li>
+                        <li><strong>Enviar un correo tras el registro:</strong> Envía un correo de bienvenida con la
+                            información de la cuenta al registrarse.</li>
+                        <li><strong>Retraso para restablecer la contraseña:</strong> Define un límite de tiempo entre cada
+                            solicitud de restablecimiento de contraseña.</li>
+                        <li><strong>Habilitar modo B2B:</strong>Activa funcionalidades para clientes empresariales, como
+                            precios personalizados y gestión de facturas.</li>
+                        <li><strong>Solicitar fecha de nacimiento:</strong> : Permite pedir la fecha de nacimiento del
+                            cliente durante el registro.</li>
+                        <li><strong>Ofertas de socios:</strong> : Permite ofrecer suscripciones a boletines de socios
+                            comerciales.</li>
+                        <figure class="my-4">
+                            <img src="img/config-cliente.png" alt="Configuración cliente" class="img-fluid rounded">
+                            <figcaption>Figura 4.1: Configuración cliente.</figcaption>
+                        </figure>
+                    </ul>
+                    <h3>4.2Grupos</h3>
+                    <p>PrestaShop te permite asignar a tus clientes a diferentes grupos para otorgarles privilegios
+                        específicos. <br>
+                        Puedes crear tantos grupos como desees y asignar a un cliente a varios grupos.</p>
+                    <ul>
+                        <li><strong>Grupos predeterminados:</strong> Asigna a los clientes a diferentes grupos (Visitante,
+                            Invitado, Cliente) con diferentes privilegios.
+                            <ul>
+                                <li><strong>Visitante:</strong>Personas sin cuenta de cliente o no autenticadas.</li>
+                                <li><strong>Invitado:</strong> Personas que han realizado un pedido usando la opción de
+                                    Compra como <strong>invitado</strong>.</li>
+                                <li><strong>Cliente:</strong>Personas que han creado una cuenta y están autenticadas.</li>
+                                <figure class="my-4">
+                                    <img src="img/clientes-gruop.png" alt="Configuración group cliente"
+                                        class="img-fluid rounded">
+                                    <figcaption>Figura 4.2: Configuración group cliente.</figcaption>
+                                </figure>
                             </ul>
                         </li>
-                        <li><strong>Opciones de redirección:</strong>
+                        <li><strong>Creación de un grupo:</strong> Haz clic en "Añadir nuevo grupo" para crear un grupo con
+                            las siguientes opciones:
                             <ul>
-                                <li><em>Sin redirección:</em> Puede generar problemas de contenido duplicado.</li>
-                                <li><em>301 Movido permanentemente:</em> Usa código HTTP 301 para redirección
-                                    permanente.</li>
-                                <li><em>302 Movido temporalmente:</em> Usa código HTTP 302 para redirección temporal.
-                                </li>
+                                <li><strong>Nombre:</strong>Usa un nombre descriptivo para el grupo.</li>
+                                <li><strong>Descuento (%): </strong> Configura un descuento para todos los miembros de este
+                                    grupo</li>
+                                <li><strong>Método de visualización de precios:</strong>o Elige el método de visualización
+                                    de precios: con impuestos o sin impuestos.</li>
+                                <li><strong>Mostrar precios:</strong>Puedes restringir la visualización de precios a
+                                    usuarios registrados, por ejemplo, ocultando los precios a los visitantes.</li>
+
+                                <figure class="my-4">
+                                    <img src="img/añadir-group.png" alt="Añadir group cliente" class="img-fluid rounded">
+                                    <figcaption>Figura 4.2.a: Añadir group cliente.</figcaption>
+                                </figure>
                             </ul>
                         </li>
-                        <li><strong>Desactivar opción MultiViews de Apache:</strong> MultiViews puede causar problemas
-                            con URLs amigables, desactívalo si es necesario.</li>
-                        <li><strong>Desactivar el módulo mod_security de Apache:</strong> Mod_security es un cortafuegos
-                            que puede bloquear características; desactívalo en caso de errores.</li>
-
+                    </ul>
+                    <h3>4.3Tratamiento</h3>
+                    <p> permiten definir mejor a los clientes, lo que puede ser útil tanto para personalizar la relación con
+                        el cliente como para funciones de ciertos módulos.</p>
+                    <figure class="my-4">
+                        <img src="img/titulos-sociales.png" alt="titulos socila" class="img-fluid rounded">
+                        <figcaption>Figura 4.3.a: Titulos Social.</figcaption>
+                    </figure>
+                    <ul>
+                        <li><strong>Agregar un nuevo título</strong>
+                            <ul>
+                                <li>Haz clic en el botón <strong>Añadir nuevo título social</strong>y completa el formulario
+                                </li>
+                                <li><strong>Título social:</strong>Elige un título común o único (ej. "Señor", "Lady",
+                                    "Magnífico", "Jedi").</li>
+                                <li><strong>Género</strong>: Algunos títulos pueden aplicarse a ambos géneros, en cuyo caso
+                                    se debe marcar como Neutral.</li>
+                                <li><strong>Imagen:</strong>Sube una imagen de 16x16 px para representar el título.</li>
+                                <li><strong>Guardar:</strong>Una vez completado, guarda el título social.</li>
+                            </ul>
+                        </li>
                     </ul>
                     <figure class="my-4">
-                        <img src="img/urls-amigable.png" alt="meta-tags.png" class="img-fluid rounded">
+                        <img src="img/aniadir-titolus-social.png" alt="Añadir titulos socila" class="img-fluid rounded">
+                        <figcaption>Figura 4.3.a:Añadir Titulos Social.</figcaption>
                     </figure>
-                    <li>
-                        <h3>Formato de los enlaces</h3>
-                        <section id="configuracion-url-amigable">
-                            <p>Personaliza la estructura de las URLs para productos, categorías y otras páginas,
-                                mejorando la legibilidad y el SEO.</p>
-                            <p><em>Se muestra solo si las URLs amigables están habilitadas.</em></p>
+                    <div class="text-center">
+                        <button onclick="document.getElementById('det-cliente').open = false" class="btn btn-info mt-3">
+                            CERRAR
+                        </button>
+                    </div>
+                </details>
+            </section>
 
-                            <p>
-                                Puedes cambiar la forma en la que se generan las URLs amigables modificando la ruta de
-                                un recurso en tu tienda.
-                                Por ejemplo, la ruta predeterminada para mostrar la página de un producto es
-                                <code>{category:/}{id}-{rewrite}{-:ean13}.html</code>, que da como resultado
-                                <code>/vestidos-de-verano/7-vestido-chiffon-estampado.html</code>. Podrías cambiar esa
-                                ruta a
-                                <code>{manufacturer:/}{id}-{rewrite:/}</code> para obtener
-                                <code>/fabricante-moda/7-vestido-chiffon-estampado/</code>.
-                            </p>
+            <!-- Contactos -->
+            <section id="contacto">
+                <details id="det-contact" class="details-p">
+                    <summary class="summary-p">📞 5.CONTACTOS</summary>
 
-                            <p>
-                                Ocho campos están disponibles de forma predeterminada, y cada uno está acompañado por
-                                una lista de palabras clave
-                                disponibles. Algunas palabras clave son obligatorias y están indicadas con un
-                                "<strong>*</strong>".
-                            </p>
-                        </section>
-                    </li>
-                    <figure class="my-4">
-                        <img src="img/configurar-urls.png" alt="lista-tiendas.png" class="img-fluid rounded">
-                    </figure>
-                    <li>
-                        <h3>Establecer URL de la tienda </h3>Aquí puedes editar el dominio principal, el dominio seguro
-                        (SSL) y la carpeta base donde está instalado PrestaShop.
-                    </li>
-                    <figure class="my-4">
-                        <img src="img/url-tienda.png" alt="lista-tiendas.png" class="img-fluid rounded">
-                    </figure>
+                    <h3>5.1 Contacto</h3>
+                    <ul>
+                        <li><strong>Puntos de contacto:</strong> Configura múltiples puntos de contacto para atención al
+                            cliente y otros servicios.</li>
+                        <figure class="my-4">
+                            <img src="img/contacto.png" alt=" contacto" class="img-fluid rounded">
+                            <figcaption>Figura 5.1: lista de Contacto.</figcaption>
+                        </figure>
+                        <li><strong>Crear una cuenta de contacto nueva:</strong>
+                            <ul>
+                                <li>1. Haz clic en<strong>"Añadir nuevo contacto"</strong>Elige un nombre para el contacto.
+                                </li>
+                                <li><strong>Título:</strong>Elige un nombre descriptivo para el punto de contacto.</li>
+                                <li><strong>Dirección de correo electrónico:</strong>Esta es la dirección a la que se
+                                    enviarán los mensajes. </li>
+                                <li><strong>¿Guardar mensajes?: </strong>?: Decide si los mensajes enviados a este contacto
+                                    deben guardarse en la herramienta de Atención al Cliente o simplemente ser enviados al
+                                    correo electrónico.</li>
+                                <li><strong>Descripción: </strong>Añade una breve descripción (máximo una línea) que se
+                                    mostrará en el formulario de contacto para que el cliente sepa el propósito del
+                                    contacto.</li>
+                            </ul>
+                        </li>
+                        <figure class="my-4">
+                            <img src="img/Aniadir-contacto.png" alt="Añadir contacto" class="img-fluid rounded">
+                            <figcaption>Figura 5.1:Añadir contacto.</figcaption>
+                        </figure>
+                    </ul>
 
-                    <li>
-                        <h3>Generación de archivo robots.txt:</h3>
-                        <p>El archivo <code>robots.txt</code> restringe el acceso de los robots de motores de búsqueda a
-                            ciertas páginas del sitio. Solo necesitas este archivo si quieres evitar que se indexen
-                            ciertos contenidos. La herramienta de PrestaShop genera este archivo automáticamente con
-                            exclusiones para directorios no públicos.</p>
-                    </li>
-                    <figure class="my-4">
-                        <img src="img/robots.png" alt="lista-tiendas.png" class="img-fluid rounded">
-                    </figure>
-                </ul>
-                <h3>6.2 Motores de Búsqueda</h3>
-                <p>Muchos de tus visitantes llegarán a tu tienda desde un motor de búsqueda. Con el fin de saber lo que
-                    ellos estaban buscando, y hacer que tu <br> tienda sea más productiva utilizando esta información,
-                    es necesario conocer las consultas que ellos hicieron. <br>
+                    <h3>5.2 Tienda</h3>
+                    <p>Si tienes tiendas físicas, PrestaShop te permite listar sus detalles de contacto para que tus
+                        clientes puedan visitarlas.</p>
+                    <ul>
+                        <li><strong>Lista de tiendas</strong><br>
+                            En la interfaz de administración, todas tus tiendas están listadas en una lista conveniente,<br>
+                            mostrando la información de cada tienda junto con un indicador que señala si la tienda está
+                            activa o no. <br>
+                            Esto es útil si deseas recopilar la información de una nueva tienda antes de su lanzamiento y
+                            tener la página lista para su presentación
+                        </li>
+                        <figure class="my-4">
+                            <img src="img/lista-tiendas.png" alt="lista-tiendas.png" class="img-fluid rounded">
+                            <figcaption>Figura 5.2:Lista-tiendas.</figcaption>
+                        </figure>
+                        <li><strong>Añadir una nueva tienda:</strong>Haz clic en<strong>"Añadir nueva tienda"</strong>y
+                            Completamos el formulario.</li>
 
-                    Esta página presenta una tabla de todos los motores de búsqueda que tu instalación de PrestaShop
-                    soporta – es decir, aquellos motores <br> que PrestaShop puede reconocer y de los que puede extraer
-                    la consulta que realizó el visitante en el motor de búsqueda para llegar a tu tienda.
-                </p>
-                <figure class="my-4">
-                    <img src="img/motores_busqueda.png" alt="lista-tiendas.png" class="img-fluid rounded">
-                </figure>
-                <p>
-                    Aunque Google es el buscador más utilizado, hay muchos otros motores de búsqueda que tus visitantes
-                    podrían utilizar para encontrar tu tienda.<br>
-                    Por lo tanto, también debes tener a estos en cuenta para recoger y analizar las consultas realizadas
-                    en ellos. Cuando un motor <br>
-                    de búsqueda desconocido comience a atraer visitantes regularmente, deberás añadirlo a tu base de
-                    datos – de lo contrario, estos visitantes <br>
-                    aparecerían marcados en tus estadísticas como procedentes de "otros motores de búsqueda", lo que no
-                    te será de utilidad.
-                </p>
-                <h3>Añadir un motor de búsqueda</h3>
+                        <figure class="my-4">
+                            <img src="img/aniadir-tienda.png" alt="lista-tiendas.png" class="img-fluid rounded">
+                            <figcaption>Figura 5.2:Lista-tiendas.</figcaption>
+                        </figure>
 
-                <p>Es muy fácil añadir un motor de búsqueda a tu listado. <br>
-                    Supongamos que queremos añadir DuckDuckGo, un motor de búsqueda que respeta la privacidad de los
-                    datos de sus usuarios:
-                </p>
-                <figure class="my-4"></figure>
-                <img src="img/Aniadir_motoresB.png" alt="lista-tiendas.png" class="img-fluid rounded">
-                </figure>
-                <ol>
-                    <li>Obtén la URL de referencia para la búsqueda. Por ejemplo, <a
-                            
-                            href="https://duckduckgo.com/?q=zapatos+ni%C3%B1os&ia=web">http://duckduckgo.com/?q=zapatos+niños</a></li>
-                    <li>Toma tan sólo la parte del servidor, que es específica para este motor de búsqueda, y escribe
-                        está en el campo "Servidor". En nuestro caso, "duckduckgo".</li>
-                    <li>Encuentra la variable de consulta:\.
+                        <figure class="my-4">
+                            <img src="img/aniadir-tienda2.png" alt="lista-tiendas.png" class="img-fluid rounded">
+                            <figcaption>Figura 5.2:Lista-tiendas.</figcaption>
+                        </figure>
+                        <!-- <li><strong>Opciones de contacto de tienda:</strong> 
                         <ul>
-                            <li>Encuentra la cadena de consulta. Esta debe ser una letra, seguida por un signo "=",
-                                seguido por la propia consulta, y cerradas con un <br>
-                                carácter "&" o el final de la cadena. En nuestro caso, esta es "q=zapatos+niños".</li>
-                            <li>La variable de consulta es la letra anterior al signo "=". En nuestro caso: "q". Escribe
-                                está en el campo "$_GET variable".</li>
+                            <li>Los clientes pueden acceder a la página de Tiendas desde el pie de página de la tienda <br> para ver las direcciones y la información de contacto de tus tiendas físicas.</li>
+                            <li>•	No puedes desactivar esta funcionalidad si tienes tiendas físicas, pero puedes hacerla inaccesible para los clientes de las siguientes maneras:
+                                <ul>
+                                    <li><strong>Desactivar o eliminar todas las tiendas</strong> en la página de administración de "Tiendas".</li>
+                                    <li><strong>Eliminar el enlace en el pie de página: </strong> En la página de administración del Widget de Enlaces, elimina el enlace a las "Tiendas" del bloque "Nuestra empresa".</li>
+                                </ul>
+                            </li>
                         </ul>
-                    </li>
-                    <li>Haz clic en el botón "Guardar", y de ahora en adelante, PrestaShop será capaz de reconocer a los
-                        visitantes provenientes desde DuckDuckGo.</li>
-                </ol>
-                <a href="https://youtu.be/NnPEoE3MuHk?si=ruzMopuouZhtpZzn">Video - 4 consejos para empezar bien el SEO de tu sitio web e-commerce</a>
-            </details>
-        </section>
+                        </li>
+                        <li><strong>Eliminar la página de Tiendas:</strong> Desactiva o elimina tiendas de la página de "Nuestra empresa".</li> -->
+                    </ul>
+                    <!-- Botón para cerrar desde abajo -->
+                    <div class="text-center">
+                        <button onclick="document.getElementById('det-contact').open = false" class="btn btn-info mt-3">
+                            CERRAR
+                        </button>
+                    </div>
+                </details>
+            
+            </section>
 
-        <!-- Buscar -->
-        <section id="busqueda">
-            <details class="details-p">
-                <summary class="summary-p">🔎 7.BUSCAR</summary>
+            <!-- Tráfico & SEO -->
+            <section id="seo">
+                <details id="det-seo" class="details-p">
+                    <summary class="summary-p">🎯 6.TRÁFICO & SEO</summary>
 
-                <h2>7.1 Parámetros de Búsqueda</h2>
+                    <h3>6.1 SEO y URLs</h3>
+                    <p>Las herramientas incluidas en esta página te ayudarán a mejorar el posicionamiento de tu sitio
+                        PrestaShop en los motores de búsqueda, y así llegar a más clientes potenciales.</p>
+                    <ul>
+                        <li>
+                            <h3> SEO y URLs </h3>
+                            <p>La página "SEO y URLs" te presenta un listado de todas esas páginas que sin duda se
+                                beneficiarán de las URLs amigables: páginas estáticas, páginas de la cuenta de usuario,
+                                páginas con contenidos generados automáticamente, <br>
+                                y te permite editar sus URLs amigables, así como sus etiquetas meta (título, descripción,
+                                palabras clave).
+                            </p>
+                        </li>
+                        <figure class="my-4">
+                            <img src="img/lista-paginas.png" alt="lista paginas" class="img-fluid rounded">
 
-                <p>La página "Búsqueda" permite configurar las funciones de búsqueda de tu tienda.</p>
+                        </figure>
 
-                <h3>Listado de Alias</h3>
-                <p>
-                    Cuando los clientes realizan una consulta utilizando el buscador interno de tu tienda, podrían
-                    cometer errores. <br>
-                    Si PrestaShop no encuentra resultados correctos para la consulta del cliente, la característica
-                    "alias" podría <br>
-                    proporcionar ciertas alternativas, corrigiendo las consultas erróneas.
-                </p>buscar.png
-                <figure class="my-4"></figure>
-                <img src="img/buscar.png" alt="buscar" class="img-fluid rounded">
-                </figure>
-                <p>Para crear un nuevo alias, sigue estos pasos:</p>
-                <ol>
-                    <li>Dirígete a la pestaña <strong>"Búsquedas en la tienda"</strong> en "Estadísticas". Desde aquí
-                        puedes ver las palabras <br>
-                        escritas y los errores más frecuentes de los clientes.</li>
-                    <li>Añade los errores más comunes a tu listado de alias, para guiar al usuario al producto correcto.
-                    </li>
-                    <li>Haz clic en <strong>"Añadir nuevo alias"</strong> en la página de preferencias "Búsqueda".</li>
-                </ol>
-                <p>En el formulario, indica el error tipográfico que deseas corregir y la palabra correcta a la que
-                    deben dirigirse.</p>
-                <figure class="my-4"></figure>
-                <img src="img/Alias.png" alt="Alias" class="img-fluid rounded">
-                </figure>
-                <h2>Indexación</h2>
-                <p>
-                    Esta sección muestra la cantidad de productos que se pueden buscar en tu tienda, comparándola con
-                    los productos en la base de datos.
-                    Si los valores no coinciden, haz clic en <strong>"Añadir los productos que faltan al
-                        índice"</strong>.
-                </p>
-                <p>
-                    Si has cambiado productos ya indexados, puedes optar por <strong>"Reconstruir el índice
-                        completo"</strong>.
-                    Además, PrestaShop ofrece una URL para ejecutar tareas cron que reconstruyan el índice
-                    automáticamente.
-                </p>
-                <figure class="my-4"></figure>
-                <img src="img/indexacion.png" alt="indexacion" class="img-fluid rounded">
-                </figure>
-                <p>
-                    Finalmente,la opción <strong>"Indexando"</strong> permite que los productos sean indexados al
-                    crearse o modificarse.
-                    Alternativamente, debes indexar los productos manual o automáticamente.
-                </p>
+                        <li>
+                            <h3>Optimización SEO:</h3> Configura metaetiquetas (título, descripción, palabras clave) para
+                            mejorar la visibilidad de cada página en los motores de búsqueda.
+                        </li>
+                        <figure class="my-4">
+                            <img src="img/meta-tags.png" alt="meta-tags.png" class="img-fluid rounded">
+                        </figure>
 
-                <h2>Opciones de Búscar</h2>
-                <p>Configura aquí el comportamiento de la función de búsqueda:</p>
-                <ul>
-                    <li><strong>Buscar en el interior de las palabras</strong>: Permite coincidencias dentro de las
-                        palabras (ej., "lus" para "blusa").</li>
-                    <li><strong>Buscar coincidencia final exacta</strong>: Ofrece resultados coincidentes al final de la
-                        palabra.</li>
-                    <li><strong>Longitud de palabra mínima</strong>: Define el tamaño mínimo para indexar y buscar,
-                        omitiendo palabras cortas.</li>
-                    <li><strong>Palabras en la lista negra</strong>: Lista de palabras a descartar en las búsquedas.
-                        Separa cada una con el carácter "|".</li>
-                </ul>
-                <figure class="my-4"></figure>
-                <img src="img/opcion_buscar.png" alt="indexacion" class="img-fluid rounded">
-                </figure>
-                <figure class="my-4"></figure>
-                <img src="img/opcion_buscar2.png" alt="indexacion" class="img-fluid rounded">
-                </figure>
+                        <li>
+                            <h3>Configuración de URLs</h3>
+                        </li>
+                        <ul>
+                            <li><strong>Opciones de URL:</strong>
+                                <ul>
+                                    <li><strong>URLs Amigables:</strong> Habilita URLs legibles para que las direcciones web
+                                        sean descriptivas. Requiere soporte de reescritura de URLs en el servidor.</li>
+                                    <li><strong>URL Acentuada:</strong> Permite el uso de caracteres especiales en las URLs.
+                                    </li>
+                                    <li><strong>URL Canónica:</strong> Previene contenido duplicado al asignar una URL
+                                        preferida a cada página.</li>
+                                </ul>
+                            </li>
+                            <li><strong>Opciones de redirección:</strong>
+                                <ul>
+                                    <li><em>Sin redirección:</em> Puede generar problemas de contenido duplicado.</li>
+                                    <li><em>301 Movido permanentemente:</em> Usa código HTTP 301 para redirección
+                                        permanente.</li>
+                                    <li><em>302 Movido temporalmente:</em> Usa código HTTP 302 para redirección temporal.
+                                    </li>
+                                </ul>
+                            </li>
+                            <li><strong>Desactivar opción MultiViews de Apache:</strong> MultiViews puede causar problemas
+                                con URLs amigables, desactívalo si es necesario.</li>
+                            <li><strong>Desactivar el módulo mod_security de Apache:</strong> Mod_security es un cortafuegos
+                                que puede bloquear características; desactívalo en caso de errores.</li>
 
-                <h2>Peso</h2>
-                <p>
-                    El "Peso" en PrestaShop permite priorizar datos específicos en las búsquedas. Un artículo con un
-                    peso de 8 será
-                    más relevante que uno con peso 2.
-                </p>
-                <figure class="my-4"></figure>
-                <img src="img/peso2.png" alt="indexacion" class="img-fluid rounded">
-                </figure>
+                        </ul>
+                        <figure class="my-4">
+                            <img src="img/urls-amigable.png" alt="meta-tags.png" class="img-fluid rounded">
+                        </figure>
+                        <li>
+                            <h3>Formato de los enlaces</h3>
+                            <section id="configuracion-url-amigable">
+                                <p>Personaliza la estructura de las URLs para productos, categorías y otras páginas,
+                                    mejorando la legibilidad y el SEO.</p>
+                                <p><em>Se muestra solo si las URLs amigables están habilitadas.</em></p>
 
-                <p>
-                    Por ejemplo, el <strong>Peso del nombre del producto</strong> tiene un valor 6, mientras que el de
-                    las
-                    <strong>etiquetas</strong> es 4 y el de la <strong>descripción</strong> es 1. Esto significa que un
-                    producto con
-                    "ipod" en su nombre aparecerá antes que otro que solo tenga "ipod" en la descripción.
-                </p>
-                <p>Se pueden asignar pesos a múltiples elementos: descripción breve, categorías, etiquetas, atributos,
-                    etc.</p>
-            </details>
-        </section>
-    </div>
-    
-    <footer>
-        <p>Autor: Fatin.M Jawad Abbas | Fecha: 11 de noviembre de 2024</p>
-    </footer>
-    
-    <!-- Enlace a los scripts de Bootstrap -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-    
-</body>
+                                <p>
+                                    Puedes cambiar la forma en la que se generan las URLs amigables modificando la ruta de
+                                    un recurso en tu tienda.
+                                    Por ejemplo, la ruta predeterminada para mostrar la página de un producto es
+                                    <code>{category:/}{id}-{rewrite}{-:ean13}.html</code>, que da como resultado
+                                    <code>/vestidos-de-verano/7-vestido-chiffon-estampado.html</code>. Podrías cambiar esa
+                                    ruta a
+                                    <code>{manufacturer:/}{id}-{rewrite:/}</code> para obtener
+                                    <code>/fabricante-moda/7-vestido-chiffon-estampado/</code>.
+                                </p>
 
+                                <p>
+                                    Ocho campos están disponibles de forma predeterminada, y cada uno está acompañado por
+                                    una lista de palabras clave
+                                    disponibles. Algunas palabras clave son obligatorias y están indicadas con un
+                                    "<strong>*</strong>".
+                                </p>
+                            </section>
+                        </li>
+                        <figure class="my-4">
+                            <img src="img/configurar-urls.png" alt="lista-tiendas.png" class="img-fluid rounded">
+                        </figure>
+                        <li>
+                            <h3>Establecer URL de la tienda </h3>Aquí puedes editar el dominio principal, el dominio seguro
+                            (SSL) y la carpeta base donde está instalado PrestaShop.
+                        </li>
+                        <figure class="my-4">
+                            <img src="img/url-tienda.png" alt="lista-tiendas.png" class="img-fluid rounded">
+                        </figure>
 
+                        <li>
+                            <h3>Generación de archivo robots.txt:</h3>
+                            <p>El archivo <code>robots.txt</code> restringe el acceso de los robots de motores de búsqueda a
+                                ciertas páginas del sitio. Solo necesitas este archivo si quieres evitar que se indexen
+                                ciertos contenidos. La herramienta de PrestaShop genera este archivo automáticamente con
+                                exclusiones para directorios no públicos.</p>
+                        </li>
+                        <figure class="my-4">
+                            <img src="img/robots.png" alt="lista-tiendas.png" class="img-fluid rounded">
+                        </figure>
+                    </ul>
+                    <h3>6.2 Motores de Búsqueda</h3>
+                    <p>Muchos de tus visitantes llegarán a tu tienda desde un motor de búsqueda. Con el fin de saber lo que
+                        ellos estaban buscando, y hacer que tu <br> tienda sea más productiva utilizando esta información,
+                        es necesario conocer las consultas que ellos hicieron. <br>
+
+                        Esta página presenta una tabla de todos los motores de búsqueda que tu instalación de PrestaShop
+                        soporta – es decir, aquellos motores <br> que PrestaShop puede reconocer y de los que puede extraer
+                        la consulta que realizó el visitante en el motor de búsqueda para llegar a tu tienda.
+                    </p>
+                    <figure class="my-4">
+                        <img src="img/motores_busqueda.png" alt="lista-tiendas.png" class="img-fluid rounded">
+                    </figure>
+                    <p>
+                        Aunque Google es el buscador más utilizado, hay muchos otros motores de búsqueda que tus visitantes
+                        podrían utilizar para encontrar tu tienda.<br>
+                        Por lo tanto, también debes tener a estos en cuenta para recoger y analizar las consultas realizadas
+                        en ellos. Cuando un motor <br>
+                        de búsqueda desconocido comience a atraer visitantes regularmente, deberás añadirlo a tu base de
+                        datos – de lo contrario, estos visitantes <br>
+                        aparecerían marcados en tus estadísticas como procedentes de "otros motores de búsqueda", lo que no
+                        te será de utilidad.
+                    </p>
+                    <h3>Añadir un motor de búsqueda</h3>
+
+                    <p>Es muy fácil añadir un motor de búsqueda a tu listado. <br>
+                        Supongamos que queremos añadir DuckDuckGo, un motor de búsqueda que respeta la privacidad de los
+                        datos de sus usuarios:
+                    </p>
+                    <figure class="my-4"></figure>
+                    <img src="img/Aniadir_motoresB.png" alt="lista-tiendas.png" class="img-fluid rounded">
+                    </figure>
+                    <ol>
+                        <li>Obtén la URL de referencia para la búsqueda. Por ejemplo, <a
+                                
+                                href="https://duckduckgo.com/?q=zapatos+ni%C3%B1os&ia=web">http://duckduckgo.com/?q=zapatos+niños</a></li>
+                        <li>Toma tan sólo la parte del servidor, que es específica para este motor de búsqueda, y escribe
+                            está en el campo "Servidor". En nuestro caso, "duckduckgo".</li>
+                        <li>Encuentra la variable de consulta:\.
+                            <ul>
+                                <li>Encuentra la cadena de consulta. Esta debe ser una letra, seguida por un signo "=",
+                                    seguido por la propia consulta, y cerradas con un <br>
+                                    carácter "&" o el final de la cadena. En nuestro caso, esta es "q=zapatos+niños".</li>
+                                <li>La variable de consulta es la letra anterior al signo "=". En nuestro caso: "q". Escribe
+                                    está en el campo "$_GET variable".</li>
+                            </ul>
+                        </li>
+                        <li>Haz clic en el botón "Guardar", y de ahora en adelante, PrestaShop será capaz de reconocer a los
+                            visitantes provenientes desde DuckDuckGo.</li>
+                    </ol>
+                    
+                    <a href="https://youtu.be/NnPEoE3MuHk?si=ruzMopuouZhtpZzn">Video - 4 consejos para empezar bien el SEO de tu sitio web e-commerce</a>
+                    <div class="text-center">
+                        <button onclick="document.getElementById('det-seo').open = false" class="btn btn-info mt-3">
+                            CERRAR
+                        </button>
+                    </div>
+                </details>
+            </section>
+
+            <!-- Buscar -->
+            <section id="busqueda">
+                <details id="det-busqueda" class="details-p">
+                    <summary class="summary-p">🔎 7.BUSCAR</summary>
+
+                    <h2>7.1 Parámetros de Búsqueda</h2>
+
+                    <p>La página "Búsqueda" permite configurar las funciones de búsqueda de tu tienda.</p>
+
+                    <h3>Listado de Alias</h3>
+                    <p>
+                        Cuando los clientes realizan una consulta utilizando el buscador interno de tu tienda, podrían
+                        cometer errores. <br>
+                        Si PrestaShop no encuentra resultados correctos para la consulta del cliente, la característica
+                        "alias" podría <br>
+                        proporcionar ciertas alternativas, corrigiendo las consultas erróneas.
+                    </p>buscar.png
+                    <figure class="my-4"></figure>
+                    <img src="img/buscar.png" alt="buscar" class="img-fluid rounded">
+                    </figure>
+                    <p>Para crear un nuevo alias, sigue estos pasos:</p>
+                    <ol>
+                        <li>Dirígete a la pestaña <strong>"Búsquedas en la tienda"</strong> en "Estadísticas". Desde aquí
+                            puedes ver las palabras <br>
+                            escritas y los errores más frecuentes de los clientes.</li>
+                        <li>Añade los errores más comunes a tu listado de alias, para guiar al usuario al producto correcto.
+                        </li>
+                        <li>Haz clic en <strong>"Añadir nuevo alias"</strong> en la página de preferencias "Búsqueda".</li>
+                    </ol>
+                    <p>En el formulario, indica el error tipográfico que deseas corregir y la palabra correcta a la que
+                        deben dirigirse.</p>
+                    <figure class="my-4"></figure>
+                    <img src="img/Alias.png" alt="Alias" class="img-fluid rounded">
+                    </figure>
+                    <h2>Indexación</h2>
+                    <p>
+                        Esta sección muestra la cantidad de productos que se pueden buscar en tu tienda, comparándola con
+                        los productos en la base de datos.
+                        Si los valores no coinciden, haz clic en <strong>"Añadir los productos que faltan al
+                            índice"</strong>.
+                    </p>
+                    <p>
+                        Si has cambiado productos ya indexados, puedes optar por <strong>"Reconstruir el índice
+                            completo"</strong>.
+                        Además, PrestaShop ofrece una URL para ejecutar tareas cron que reconstruyan el índice
+                        automáticamente.
+                    </p>
+                    <figure class="my-4"></figure>
+                    <img src="img/indexacion.png" alt="indexacion" class="img-fluid rounded">
+                    </figure>
+                    <p>
+                        Finalmente,la opción <strong>"Indexando"</strong> permite que los productos sean indexados al
+                        crearse o modificarse.
+                        Alternativamente, debes indexar los productos manual o automáticamente.
+                    </p>
+
+                    <h2>Opciones de Búscar</h2>
+                    <p>Configura aquí el comportamiento de la función de búsqueda:</p>
+                    <ul>
+                        <li><strong>Buscar en el interior de las palabras</strong>: Permite coincidencias dentro de las
+                            palabras (ej., "lus" para "blusa").</li>
+                        <li><strong>Buscar coincidencia final exacta</strong>: Ofrece resultados coincidentes al final de la
+                            palabra.</li>
+                        <li><strong>Longitud de palabra mínima</strong>: Define el tamaño mínimo para indexar y buscar,
+                            omitiendo palabras cortas.</li>
+                        <li><strong>Palabras en la lista negra</strong>: Lista de palabras a descartar en las búsquedas.
+                            Separa cada una con el carácter "|".</li>
+                    </ul>
+                    <figure class="my-4"></figure>
+                    <img src="img/opcion_buscar.png" alt="indexacion" class="img-fluid rounded">
+                    </figure>
+                    <figure class="my-4"></figure>
+                    <img src="img/opcion_buscar2.png" alt="indexacion" class="img-fluid rounded">
+                    </figure>
+
+                    <h2>Peso</h2>
+                    <p>
+                        El "Peso" en PrestaShop permite priorizar datos específicos en las búsquedas. Un artículo con un
+                        peso de 8 será
+                        más relevante que uno con peso 2.
+                    </p>
+                    <figure class="my-4"></figure>
+                    <img src="img/peso2.png" alt="indexacion" class="img-fluid rounded">
+                    </figure>
+
+                    <p>
+                        Por ejemplo, el <strong>Peso del nombre del producto</strong> tiene un valor 6, mientras que el de
+                        las
+                        <strong>etiquetas</strong> es 4 y el de la <strong>descripción</strong> es 1. Esto significa que un
+                        producto con
+                        "ipod" en su nombre aparecerá antes que otro que solo tenga "ipod" en la descripción.
+                    </p>
+                    <p>Se pueden asignar pesos a múltiples elementos: descripción breve, categorías, etiquetas, atributos,
+                        etc.</p>
+                        <div class="text-center">
+                            <button onclick="document.getElementById('det-busqueda').open = false" class="btn btn-info mt-3">
+                                CERRAR
+                            </button>
+                        </div>
+                </details>
+            </section>
+            <!-- enlaces de videos -->
+            <section class="container my-5">
+                
+                <h2 class="text-center mb-4" style="color: #363d4d;"><i class="fas fa-video"></i> Enlaces de Video</h2>
+                <h4 class="text-center text-muted">Explora estos videos para aprender más sobre la configuración de tu tienda en PrestaShop:</h4>
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="card h-100">
+                            <a href="https://www.youtube.com/watch?v=wped14OK-FA&list=PL9eSWuj0eNsB-dbpzYDSUwATpyILaOrKz&index=2" target="_blank">
+                                <img src="https://img.youtube.com/vi/wped14OK-FA/0.jpg" class="card-img-top" alt="Título del Video">
+                            </a>
+                            <div class="card-body">
+                                <h5 class="card-title">Configuración Básica</h5>
+                                <p class="card-text">⚙ Aprende a configurar los ajustes básicos de tu tienda.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card h-100">
+                            <a href="https://www.youtube.com/watch?v=z-eOaQ-LpHE&list=PL9eSWuj0eNsB-dbpzYDSUwATpyILaOrKz&index=51" target="_blank">
+                                <img src="https://img.youtube.com/vi/z-eOaQ-LpHE/0.jpg" class="card-img-top" alt="Título del Video">
+                            </a>
+                            <div class="card-body">
+                                <h5 class="card-title">Mantinamento</h5>
+                                <p class="card-text">🔧Cómo activar el Modo Mantenimiento en PrestaShop 8.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card h-100">
+                            <a href="https://www.youtube.com/watch?v=EZgtet_pWjo&list=PL9eSWuj0eNsB-dbpzYDSUwATpyILaOrKz&index=48" target="_blank">
+                                <img src="https://img.youtube.com/vi/EZgtet_pWjo/0.jpg" class="card-img-top" alt="Título del Video">
+                            </a>
+                            <div class="card-body">
+                                <h5 class="card-title">Contacto</h5>
+                                <p class="card-text">📞 Configuración de contacto en PrestaShop 8.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card h-100">
+                            <a href="https://www.youtube.com/watch?v=9juGgb-rsQY&list=PL9eSWuj0eNsB-dbpzYDSUwATpyILaOrKz&index=42" target="_blank">
+                                <img src="https://img.youtube.com/vi/9juGgb-rsQY/0.jpg" class="card-img-top" alt="Título del Video">
+
+                            </a>
+                            <div class="card-body">
+                                <h5 class="card-title">SEO y URLs</h5>
+                                <p class="card-text">🎯Configuración SEO de las URLs en PrestaShop 8.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            
+        </div>
+        <!-- Pie de página -->
+        <footer class="">
+            <p>Autor: Fatin.M Jawad Abbas | Fecha: 11 de noviembre de 2024 | Version: 0.1</p>
+        </footer>
+        
+        <!-- Enlace a los scripts de Bootstrap -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+        
+    </body>
 </html>

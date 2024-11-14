@@ -1,12 +1,10 @@
 header, footer {
-    background-color: #25b9d7;
-    color: white;
-    padding: 15px;
+    background-color: #B0E0EA;
+    color: #363d4d;
+    padding: 5px;
     margin-bottom: 30px;
     text-align: center;
 }
-
-
 .section-title {
     margin-top: 30px;
 }
@@ -15,7 +13,7 @@ header, footer {
     margin-bottom: 20px;
     border: 1px solid #ddd;
     border-radius: 5px;
-    padding: 15px;
+    padding: 10px;
     background-color: #f8f9fa;
 }
 
@@ -24,6 +22,6 @@ header, footer {
     font-size: 1.2em;
     cursor: pointer;
     list-style: none;
-    color: #25b9d7;
+    color: #4F6185;
     margin-bottom: 10px;
 }
